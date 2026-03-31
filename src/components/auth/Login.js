@@ -4,7 +4,6 @@ import { useAuth } from '../../contexts/AuthContext';
 import LoadingSpinner from '../common/LoadingSpinner';
 import TermsAgreement from './TermsAgreement';
 import { Eye, EyeOff, Droplets, Zap, ArrowLeft, Mail } from 'lucide-react';
-import { isReportsPortalHost } from '../../utils/portalHost';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -23,7 +22,7 @@ const Login = () => {
   
   const { login, verifyOtp, resendOtp, acceptTerms } = useAuth();
   const navigate = useNavigate();
-  const isReportPortal = isReportsPortalHost();
+  const isReportPortal = false;
   const portalBrandName = 'CRB Service Reports';
 
   // Check for pending verification on mount (handles page refresh/redirects)

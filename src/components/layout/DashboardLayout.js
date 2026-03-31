@@ -24,7 +24,6 @@ import {
 } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { isReportsPortalHost } from '../../utils/portalHost';
 import TodoButton from '../todos/TodoButton';
 
 const DashboardLayout = ({ children, forceReportsPortal = false }) => {
@@ -181,7 +180,7 @@ const DashboardLayout = ({ children, forceReportsPortal = false }) => {
   // Operator accounts (accountType === 'customer') only see Systems and AI Chat
   const isOperator = user?.accountType === 'customer';
   const isEnterprise = user?.accountType !== 'customer' && user?.subscription?.plan === 'enterprise';
-  const isReportPortal = forceReportsPortal || isReportsPortalHost();
+  const isReportPortal = Boolean(forceReportsPortal);
   
   const allNavigation = [
     { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard, hideForOperator: true },
