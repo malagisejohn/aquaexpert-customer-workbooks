@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: aquaexpert-customer-workbooks
+    name: aquaexpert-frontend
     runtime: static
     autoDeploy: true
     buildCommand: npm ci && npm run build

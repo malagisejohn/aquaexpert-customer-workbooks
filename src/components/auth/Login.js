@@ -274,6 +274,9 @@ const Login = () => {
       <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-white p-12">
+          <p className="mb-4 text-sm font-medium uppercase tracking-wide text-blue-100">
+            Customer accounts only have workbooks and ai chat
+          </p>
           <div className="flex items-center space-x-3 mb-8">
             <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
               <Droplets className="h-8 w-8" />
@@ -329,13 +332,16 @@ const Login = () => {
                   {isReportPortal ? portalBrandName : 'AquaExpert'}
                 </h1>
               </div>
+              <p className="lg:hidden text-center text-xs font-medium uppercase tracking-wide text-blue-700 mb-6">
+                Customer accounts only have workbooks and ai chat
+              </p>
 
               <div className="text-center mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Welcome Back
                 </h2>
                 <p className="text-gray-600">
-                  {isReportPortal ? 'Sign in to access finalized service reports' : 'Sign in to your AquaExpert account'}
+                  {isReportPortal ? 'Sign in to access finalized service reports' : 'Customer accounts only: sign in to access workbooks and ai chat.'}
                 </p>
               </div>
 

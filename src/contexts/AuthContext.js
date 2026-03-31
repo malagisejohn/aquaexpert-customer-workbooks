@@ -43,6 +43,18 @@ axios.interceptors.response.use(
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const CUSTOMER_ONLY_MESSAGE = 'Customer accounts only have permission to sign in here.';
+
+  const isCustomerAccount = (account) => account?.accountType === 'customer';
+
+  const denyNonCustomerAccess = (message = CUSTOMER_ONLY_MESSAGE, showToast = true) => {
+    localStorage.removeItem('token');
+    setUser(null);
+    if (showToast) {
+      toast.error(message);
+    }
+    return { success: false, message };
+  };
 
   // Load user from token on mount
   useEffect(() => {
@@ -51,7 +63,11 @@ export const AuthProvider = ({ children }) => {
       if (token) {
         try {
           const response = await axios.get('/api/auth/me');
-          setUser(response.data.user);
+          if (isCustomerAccount(response.data.user)) {
+            setUser(response.data.user);
+          } else {
+            denyNonCustomerAccess(CUSTOMER_ONLY_MESSAGE, false);
+          }
         } catch (error) {
           console.error('Failed to load user:', error);
           localStorage.removeItem('token');
@@ -104,6 +120,9 @@ export const AuthProvider = ({ children }) => {
 
       // Check if terms acceptance is required
       if (response.data.requiresTermsAcceptance) {
+        if (!isCustomerAccount(response.data.user)) {
+          return denyNonCustomerAccess();
+        }
         return { 
           success: true, 
           requiresTermsAcceptance: true, 
@@ -113,6 +132,10 @@ export const AuthProvider = ({ children }) => {
       }
 
       const { token, user: userData } = response.data;
+
+      if (!isCustomerAccount(userData)) {
+        return denyNonCustomerAccess();
+      }
       
       localStorage.setItem('token', token);
       setUser(userData);
@@ -153,6 +176,10 @@ export const AuthProvider = ({ children }) => {
       }
 
       const { token, user: userData } = response.data;
+
+      if (!isCustomerAccount(userData)) {
+        return denyNonCustomerAccess();
+      }
       
       localStorage.setItem('token', token);
       setUser(userData);
@@ -186,6 +213,10 @@ export const AuthProvider = ({ children }) => {
       });
 
       const { token, user: userData } = response.data;
+
+      if (!isCustomerAccount(userData)) {
+        return denyNonCustomerAccess();
+      }
       
       localStorage.setItem('token', token);
       setUser(userData);
@@ -215,6 +246,10 @@ export const AuthProvider = ({ children }) => {
       }
 
       const { token, user: newUser } = response.data;
+
+      if (!isCustomerAccount(newUser)) {
+        return denyNonCustomerAccess();
+      }
       
       localStorage.setItem('token', token);
       setUser(newUser);
