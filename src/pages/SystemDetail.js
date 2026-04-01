@@ -29,6 +29,12 @@ const SYSTEM_TYPES = {
     color: 'teal',
     description: 'Pretreatment systems (e.g., softeners, RO, city & well water)'
   },
+  sanikill: {
+    name: 'Sanikill',
+    icon: Factory,
+    color: 'teal',
+    description: 'Sanikill monochloramine treatment systems'
+  },
   cooling_tower: {
     name: 'Cooling Tower',
     icon: Thermometer,

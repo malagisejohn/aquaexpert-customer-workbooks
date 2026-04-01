@@ -1148,6 +1148,7 @@ const OperatorSetup = () => {
                   <option value="closed_loop">Closed Loop</option>
                   <option value="waste_water">Waste Water</option>
                   <option value="pretreatment">Pretreatment</option>
+                  <option value="sanikill">Sanikill</option>
                 </select>
               </div>
 

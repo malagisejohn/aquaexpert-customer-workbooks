@@ -167,6 +167,8 @@ const KpiWorkbook = () => {
       { name: 'Free Chlorine', unit: 'ppm', targetRange: { min: 0.5, max: 2.0 } },
       { name: 'Total Chlorine', unit: 'ppm', targetRange: { min: 0.5, max: 2.5 } },
       { name: 'ORP', unit: 'mV', targetRange: { min: 650, max: 850 } },
+      { name: 'Monochloramine', unit: 'ppm', targetRange: { min: 0.5, max: 2.0 } },
+      { name: 'Free Ammonia', unit: 'ppm', targetRange: { min: 0, max: 0.2 } },
       { name: 'Phosphate', unit: 'ppm', targetRange: { min: 10, max: 50 } },
       { name: 'PTSA', unit: 'ppm', targetRange: { min: 10, max: 30 } },
       { name: 'Polymer', unit: 'ppm', targetRange: { min: 90, max: 150 } },

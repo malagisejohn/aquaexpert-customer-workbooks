@@ -125,7 +125,7 @@ const Help = () => {
               <OnboardingStep
                 number={isCustomerAccount ? 1 : 2}
                 title="Add Water Treatment Systems"
-                description="Create systems for cooling towers, steam boilers, closed loops, pretreatment, or waste water. Each system type has specialized KPI tracking."
+                description="Create systems for cooling towers, steam boilers, closed loops, pretreatment, Sanikill, or waste water. Each system type has specialized KPI tracking."
                 action={isCustomerAccount ? "Go to Dashboard and add your first system" : "Click on a customer, then 'Add System'"}
                 icon={<Gauge className="h-5 w-5" />}
               />
@@ -274,6 +274,7 @@ const Help = () => {
               <h4 className="font-medium text-gray-900 mb-2">System Types:</h4>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-sm">
                 <span className="px-3 py-1 bg-teal-100 text-teal-800 rounded-full">Pretreatment</span>
+                <span className="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full">Sanikill</span>
                 <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">Cooling Tower</span>
                 <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full">Steam Boiler</span>
                 <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full">Closed Loop</span>
