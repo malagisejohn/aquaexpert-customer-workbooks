@@ -275,7 +275,7 @@ const Login = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-white p-12">
           <p className="mb-4 text-sm font-medium uppercase tracking-wide text-blue-100">
-            Customer accounts only have workbooks and ai chat
+            Customer Access: Workbooks + AI Chat
           </p>
           <div className="flex items-center space-x-3 mb-8">
             <div className="p-3 bg-white/20 rounded-xl backdrop-blur-sm">
@@ -286,27 +286,27 @@ const Login = () => {
           
           <div className="max-w-md text-center space-y-6">
             <h2 className="text-2xl font-semibold">
-              {isReportPortal ? 'Report Repository' : 'Water Treatment Management System'}
+              {isReportPortal ? 'Report Repository' : 'Customer Workbook Portal'}
             </h2>
             <p className="text-blue-100 text-lg leading-relaxed">
               {isReportPortal
                 ? 'Secure access to finalized service reports shared with your organization.'
-                : 'Monitor and optimize cooling towers, steam boilers, and closed loops with precision, innovation, and compliance.'}
+                : 'Access your assigned system workbooks, review operating data, and use AI chat for customer support insights.'}
             </p>
             
             {!isReportPortal && (
               <div className="grid grid-cols-1 gap-4 mt-8">
                 <div className="flex items-center space-x-3 p-4 bg-white/10 rounded-lg backdrop-blur-sm">
                   <Zap className="h-5 w-5 text-accent-300" />
-                  <span className="text-sm">AI-Powered Analysis & Automation</span>
+                  <span className="text-sm">AI Chat Support</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-white/10 rounded-lg backdrop-blur-sm">
                   <Droplets className="h-5 w-5 text-green-300" />
-                  <span className="text-sm">Real-time KPI Monitoring</span>
+                  <span className="text-sm">Customer Workbook Access</span>
                 </div>
                 <div className="flex items-center space-x-3 p-4 bg-white/10 rounded-lg backdrop-blur-sm">
                   <div className="h-5 w-5 bg-accent-300 rounded"></div>
-                  <span className="text-sm">Automated Report Generation</span>
+                  <span className="text-sm">System Data and History</span>
                 </div>
               </div>
             )}
@@ -333,7 +333,7 @@ const Login = () => {
                 </h1>
               </div>
               <p className="lg:hidden text-center text-xs font-medium uppercase tracking-wide text-blue-700 mb-6">
-                Customer accounts only have workbooks and ai chat
+                Customer Access: Workbooks + AI Chat
               </p>
 
               <div className="text-center mb-8">
@@ -341,7 +341,7 @@ const Login = () => {
                   Welcome Back
                 </h2>
                 <p className="text-gray-600">
-                  {isReportPortal ? 'Sign in to access finalized service reports' : 'Customer accounts only: sign in to access workbooks and ai chat.'}
+                  {isReportPortal ? 'Sign in to access finalized service reports' : 'Customer sign-in for workbook and AI chat access.'}
                 </p>
               </div>
 
